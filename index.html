@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<title>Vodka Client 1.16.5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+/* ========== RESET ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Inter, Arial, sans-serif;
+}
+
+body {
+    background: #ffffff;
+    color: #111;
+    overflow-x: hidden;
+}
+
+/* ========== ANIMATED GRID BACKGROUND ========== */
+.grid-bg {
+    position: fixed;
+    inset: -50%;
+    background-image:
+        linear-gradient(to right, rgba(0,0,0,0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0,0,0,0.05) 1px, transparent 1px);
+    background-size: 40px 40px;
+    animation: gridMove 30s linear infinite;
+    z-index: -2;
+}
+
+.grid-glow {
+    position: fixed;
+    inset: 0;
+    background: radial-gradient(circle at center, rgba(0,0,0,0.04), transparent 60%);
+    animation: glowPulse 8s ease-in-out infinite;
+    z-index: -1;
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(40px, 40px); }
+}
+
+@keyframes glowPulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.7; }
+}
+
+/* ========== HEADER ========== */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    gap: 14px;
+}
+
+.logo img {
+    width: 44px;
+    height: 44px;
+}
+
+/* ========== TITLE ========== */
+.title {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    background: linear-gradient(135deg, #ff8c3a, #ff6a00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: fadeUp 1s ease forwards;
+}
+
+.title span {
+    background: linear-gradient(135deg, #6a7cff, #4b5cff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* ========== HERO ========== */
+.hero {
+    text-align: center;
+    margin-top: 100px;
+    animation: fadeUp 1.2s ease forwards;
+}
+
+.hero h1 {
+    font-size: 46px;
+    margin-bottom: 16px;
+}
+
+.hero p {
+    color: #666;
+    font-size: 16px;
+}
+
+/* ========== CARDS ========== */
+.cards {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.card {
+    width: 260px;
+    height: 320px;
+    border-radius: 20px;
+    padding: 30px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    backdrop-filter: blur(6px);
+    animation: fadeUp 1s ease forwards;
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.03);
+    transition: 0.3s;
+}
+
+.orange { background: linear-gradient(135deg, #ff8c3a, #ff6a00); }
+.blue   { background: linear-gradient(135deg, #6a7cff, #4b5cff); }
+.green  { background: linear-gradient(135deg, #3fa85b, #2f8f4e); }
+
+.card h2 {
+    font-size: 26px;
+}
+
+.card p {
+    opacity: 0.9;
+}
+
+.btn {
+    background: rgba(255,255,255,0.25);
+    padding: 12px;
+    border-radius: 10px;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: rgba(255,255,255,0.45);
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== MOBILE ========== */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .title {
+        font-size: 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="grid-bg"></div>
+<div class="grid-glow"></div>
+
+<header>
+    <div class="logo">
+        <img src="logo.png" alt="Logo">
+    </div>
+    <div class="title">Vodka <span>Client</span></div>
+</header>
+
+<section class="hero">
+    <h1>Покупка, о которой<br>вы не пожалеете</h1>
+</section>
+
+<section class="cards">
+    <div class="card orange">
+        <h2>1 Мес</h2>
+        <p>99 Рублей</p>
+        <a class="btn" href="https://t.me/Attack_T1rov">Купить</a>
+    </div>
+
+    <div class="card blue">
+        <h2>6 Мес</h2>
+        <p>299 Рублей</p>
+        <a class="btn" href="https://t.me/Attack_T1rov">Купить</a>
+    </div>
+
+    <div class="card green">
+        <h2>НАВСЕГДА</h2>
+        <p>499 Рублей</p>
+        <a class="btn" href="https://t.me/Attack_T1rov">Купить</a>
+    </div>
+</section>
+
+</body>
+</html>
